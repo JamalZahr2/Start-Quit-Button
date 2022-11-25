@@ -1,6 +1,6 @@
 //Global Variables
 Boolean start=false, startGame=false;
-float quitButtonX, quitButtonY, quitButtonWidthDiameter, quitButtonHeightDiameter;
+int quitButtonX, quitButtonY, quitButtonWidthDiameter, quitButtonHeightDiameter;
 int appWidth, appHeight;
 int CursorX = mouseX, CursorY = mouseY;
 int x, y;
@@ -35,6 +35,10 @@ void keyPressed() {
 void mousePressed() {
   //
   mouseKeyBinding();
+  //
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidthDiameter && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeightDiameter ) {
+    exit();
+  }
 }//End mousePressed
 //
 //End Main Program
